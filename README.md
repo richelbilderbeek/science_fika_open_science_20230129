@@ -26,3 +26,22 @@ Open Science är ett sätt att göra vetenskap som är mer reproducerbar, effekt
 
 
 
+
+
+# science_fika_open_science_20230129
+
+Talk given at 2023-01-29 at the Science Fika about Open Science
+
+
+# What is science?
+
+Classical model
+
+
+
+
+# What is Open Science?
+
+# EU
+
+# Pre-registration in clinical trials
