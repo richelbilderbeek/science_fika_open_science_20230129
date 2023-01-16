@@ -1,8 +1,39 @@
 # science_fika_talk
 
-My talk for [Science Fika](https://www.sciencefika.se/) in Uppsala.
+My talk for [Science Fika](https://www.sciencefika.se/) in Uppsala
+on 2023-01-29.
 
-It will be given at 2023-01-29.
+## Summary used for Science Fika
+
+### Open Science and scientists being humans
+
+From movies, we get the idea that science is a rational and ideal world 
+for pursuing knowledge. We know, however, that scientists are just humans 
+that make (understandable!) choices that hurt science. 
+In this talk, Richel will talk about the classic scientific method, 
+some of the problems that it has and how Open Science tries to 
+solve (some of) it. In his point of view, Open Science helps society to 
+accept that scientists are just human. 
+He'll also have a shameless plug for Open Science Uppsala, 
+the local Open Science community in Uppsala, 
+with website https://bit.ly/open_science_uppsala, 
+where everyone that embrace the scientific method is welcome!
+
+### Open Science och forskare som är människa
+
+Från filmer får vi idén att vetenskap är en rationell och idealisk värld
+för att söka kunskap. Vi vet dock att forskare bara är människor
+som gör (förståeliga!) val som skadar vetenskapen.
+I detta föredrag kommer Richel att prata om den klassiska vetenskapliga metoden,
+några av problemen som den har och hur Open Science försöker
+lösa (en del av) det. Enligt hans synvinkel hjälper Open Science samhället att
+acceptera att forskare bara är människor.
+Han kommer också att ha en skamlös plugg för Open Science Uppsala,
+den lokala Open Science community i Uppsala,
+med webbplats https://bit.ly/open_science_uppsala,
+där alla som anammar den vetenskapliga metoden är välkomna!
+
+
 
 
 ## Publicity
@@ -60,14 +91,15 @@ Problems
 
 # Pre-registration in clinical trials
 
+## Links
+
+ * [An earlier presentation of me](https://github.com/richelbilderbeek/open_science_presentation_20211111)
 
 ## References
 
  * [Gopalakrishna et al, 2022] Gopalakrishna, Gowri, et al. "Prevalence of questionable research practices, research misconduct and their potential explanatory factors: A survey among academic researchers in The Netherlands." PloS one 17.2 (2022): e0263023.
 
  * [Munafò et al., 2017] Munafò, Marcus R., et al. "A manifesto for reproducible science." Nature human behaviour 1.1 (2017): 1-9.
-
-
 
  * [Wicherts et al., 2016] Wicherts, Jelte M., et al. "Degrees of freedom in planning, running, analyzing, and reporting psychological studies: A checklist to avoid p-hacking." Frontiers in psychology (2016): 1832.
 
