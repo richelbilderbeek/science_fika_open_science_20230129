@@ -93,7 +93,8 @@ Problems
 
 ## Links
 
- * [An earlier presentation of me](https://github.com/richelbilderbeek/open_science_presentation_20211111)
+ * [A more academic presentation by me](https://github.com/richelbilderbeek/open_science_presentation_20211111)
+ * [An Open Science Uppsala presentation by Gustav Nilsonne](https://t.co/CiPQb4OXfj)
 
 ## References
 
