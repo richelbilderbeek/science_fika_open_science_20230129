@@ -107,3 +107,7 @@ Problems
  * [Wicherts, 2017] Wicherts, Jelte M. "The weak spots in contemporary science (and how to fix them)." Animals 7.12 (2017): 90.
 
 
+
+## Notes
+
+ * Maybe use Paolo Macchiarini as an example, https://www.science.org/content/article/six-papers-disgraced-surgeon-should-be-retracted-report-concludes
