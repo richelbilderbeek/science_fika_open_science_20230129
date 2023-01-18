@@ -8,9 +8,11 @@ get_sd_woman_length <- function() { 10 }
 
 #' Create a table of `n` subjects, with half of type A and half of type B
 create_subjects <- function(n_subjects, seed) {
+  testthat::expect_equal(n_subjects / 4, round(n_subjects / 4))
   set.seed(seed)
   t <- tibble::tibble(
     preference = rep(c("red", "green"), times = n_subjects / 2), 
+    phone_number = rep(c("odd", "even"), each = n_subjects / 2), 
     length = rnorm(
       n = n_subjects, 
       mean = get_mean_woman_length(), 
@@ -20,9 +22,10 @@ create_subjects <- function(n_subjects, seed) {
   t$preference <- as.factor(t$preference)
   t
 }
-testthat::expect_equal(create_subjects(10, 42), create_subjects(10, 42))
+testthat::expect_equal(create_subjects(12, 42), create_subjects(12, 42))
 
 plot_subjects <- function(t) {
+  n_subjects <- nrow(t)
   binwidth <- 1
   xs <- seq(
     from = get_mean_woman_length() - (3.0 * get_sd_woman_length()), 
@@ -47,7 +50,7 @@ plot_subjects <- function(t) {
   ggplot2::ggplot(
     t, 
     ggplot2::aes(x = length, color = preference)) + 
-    ggplot2::geom_freqpoly(size = 3, binwidth = binwidth) + 
+    ggplot2::geom_freqpoly(linewidth = 3, binwidth = binwidth) + 
     ggplot2::geom_line(data = t_ideal, mapping = ggplot2::aes(x = x, y = y), color = "black", lty = "dashed") +
     ggplot2::scale_x_continuous(name = "Length (cm)") +
     ggplot2::scale_y_continuous(name = "Amount of women with that length") +
@@ -59,6 +62,7 @@ plot_subjects <- function(t) {
     ggplot2::scale_color_manual(values = c("red" = "red", "green" = "green")) +
     ggplot2::theme(text = ggplot2::element_text(size = 20))
 }
+
 plot_subjects(create_subjects(n_subjects = 1000, seed = 42))
 
 # Create one example, 1000 women
@@ -69,7 +73,7 @@ for (n_subjects in c(1000, 100, 20)) {
 }
 
 
-
+#' Determines if 'red' is significantly different than 'green'
 create_experiment_results <- function(n_subjects, n_seeds) {
   t_result <- tibble::tibble(seed = seq_len(n_seeds), p_value = NA)
   for (i in seq_len(n_seeds)) {
@@ -114,3 +118,18 @@ t[best_seed, ]
 plot_subjects(create_subjects(n_subjects = 1000, seed = best_seed))
 ggplot2::ggsave(paste0("distribution_", n_subjects, "_", best_seed, ".png"), width = 7, height = 7)
 
+
+#' Determines if 'red' is significantly different than 'green', for a covariate
+create_experiment_results_with_covariate <- function(n_subjects, n_seeds) {
+  t_result <- tibble::tibble(seed = seq_len(n_seeds), p_value = NA)
+  for (i in seq_len(n_seeds)) {
+    seed <- t_result$seed[i]
+    t <- create_subjects(n_subjects, seed = seed)
+    p_value <- t.test(
+      x = t[t$preference == "red", ]$length, 
+      y = t[t$preference == "green", ]$length
+    )$p.value
+    t_result$p_value[i] <- p_value
+  }
+  t_result
+}
