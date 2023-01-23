@@ -39,6 +39,39 @@ plot_subjects <- function(t) {
     t_ideal$x, 
     mean = get_mean_woman_length(), 
     sd = get_sd_woman_length()
+  ) * n_subjects * binwidth / 1
+  ggplot2::ggplot(
+    t, 
+    ggplot2::aes(x = length)) + 
+    ggplot2::geom_freqpoly(linewidth = 3, binwidth = binwidth) + 
+    ggplot2::geom_line(data = t_ideal, mapping = ggplot2::aes(x = x, y = y), color = "black", lty = "dashed") +
+    ggplot2::scale_x_continuous(name = "Length (cm)") +
+    ggplot2::scale_y_continuous(name = "Amount of women with that length") +
+    ggplot2::labs(
+      caption = paste0(
+        "Number of women: ", n_subjects
+      )
+    ) +
+    ggplot2::theme(text = ggplot2::element_text(size = 20))
+}
+plot_subjects(create_subjects(n_subjects = 1000, seed = 42))
+
+
+plot_subjects_by_preference <- function(t) {
+  n_subjects <- nrow(t)
+  binwidth <- 1
+  xs <- seq(
+    from = get_mean_woman_length() - (3.0 * get_sd_woman_length()), 
+    to = get_mean_woman_length() + (3.0 * get_sd_woman_length()), 
+    by = binwidth
+  )
+  t_ideal <- tibble::tibble(
+    x = xs
+  )
+  t_ideal$y <- dnorm(
+    t_ideal$x, 
+    mean = get_mean_woman_length(), 
+    sd = get_sd_woman_length()
   ) * n_subjects * binwidth / 2
   statistics <- broom::tidy(
     t.test(
@@ -63,12 +96,14 @@ plot_subjects <- function(t) {
     ggplot2::theme(text = ggplot2::element_text(size = 20))
 }
 
-plot_subjects(create_subjects(n_subjects = 1000, seed = 42))
+plot_subjects_by_preference(create_subjects(n_subjects = 1000, seed = 42))
 
 # Create one example, 1000 women
 for (n_subjects in c(1000, 100, 20)) {
   t <- create_subjects(n_subjects = n_subjects, seed = 1)
   plot_subjects(t)
+  ggplot2::ggsave(paste0("distribution_", n_subjects, "_no_preference.png"), width = 7, height = 7)
+  plot_subjects_by_preference(t)
   ggplot2::ggsave(paste0("distribution_", n_subjects, ".png"), width = 7, height = 7)
 }
 
@@ -115,7 +150,7 @@ ggplot2::ggsave(paste0("n_significant_findings_", n_subjects, "_", n_seeds, ".pn
 best_seed <- which(t$p_value == min(t$p_value))
 t[best_seed, ]
 
-plot_subjects(create_subjects(n_subjects = 1000, seed = best_seed))
+plot_subjects_by_preference(create_subjects(n_subjects = 1000, seed = best_seed))
 ggplot2::ggsave(paste0("distribution_", n_subjects, "_", best_seed, ".png"), width = 7, height = 7)
 
 
