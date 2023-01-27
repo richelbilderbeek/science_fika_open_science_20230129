@@ -49,12 +49,12 @@ plot_subjects <- function(t) {
     ggplot2::scale_y_continuous(name = "Amount of women with that length") +
     ggplot2::labs(
       caption = paste0(
-        "Number of women: ", n_subjects
+        #"Number of women: ", n_subjects
       )
     ) +
     ggplot2::theme(text = ggplot2::element_text(size = 20))
 }
-plot_subjects(create_subjects(n_subjects = 1000, seed = 42))
+plot_subjects(create_subjects(n_subjects = 200, seed = 42))
 
 
 plot_subjects_by_preference <- function(t) {
@@ -89,7 +89,8 @@ plot_subjects_by_preference <- function(t) {
     ggplot2::scale_y_continuous(name = "Amount of women with that length") +
     ggplot2::labs(
       caption = paste0(
-        "Number of women: ", n_subjects, ", p-value: ", format(statistics$p.value, digits = 3)
+        # "Number of women: ", n_subjects, ", ",
+        "p-value: ", format(100.0 * statistics$p.value, digits = 3), "%"
       )
     ) +
     ggplot2::scale_color_manual(values = c("red" = "red", "green" = "green")) +
@@ -99,7 +100,7 @@ plot_subjects_by_preference <- function(t) {
 plot_subjects_by_preference(create_subjects(n_subjects = 1000, seed = 42))
 
 # Create one example, 1000 women
-for (n_subjects in c(1000, 100, 20)) {
+for (n_subjects in c(200, 100, 20)) {
   t <- create_subjects(n_subjects = n_subjects, seed = 1)
   plot_subjects(t)
   ggplot2::ggsave(paste0("distribution_", n_subjects, "_no_preference.png"), width = 7, height = 7)
@@ -123,7 +124,7 @@ create_experiment_results <- function(n_subjects, n_seeds) {
   t_result
 }
 
-n_subjects <- 1000
+n_subjects <- 200
 n_seeds <- 1000
 t <- create_experiment_results(n_subjects = n_subjects, n_seeds = n_seeds)
 n_significant <- sum(t$p_value < 0.05)
@@ -150,7 +151,7 @@ ggplot2::ggsave(paste0("n_significant_findings_", n_subjects, "_", n_seeds, ".pn
 best_seed <- which(t$p_value == min(t$p_value))
 t[best_seed, ]
 
-plot_subjects_by_preference(create_subjects(n_subjects = 1000, seed = best_seed))
+plot_subjects_by_preference(create_subjects(n_subjects = 200, seed = best_seed))
 ggplot2::ggsave(paste0("distribution_", n_subjects, "_", best_seed, ".png"), width = 7, height = 7)
 
 

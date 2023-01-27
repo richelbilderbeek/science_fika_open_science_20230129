@@ -47,6 +47,10 @@ Open Science is a way to do science that is more reproducible, effective and inc
 
 Open Science är ett sätt att göra vetenskap som är mer reproducerbar, effektiv och inkluderande. Sedan 2016 ser Europeiska unionen Open Science som den bästa metoden att forska på. Detta föredrag diskuterar vad Open Science är och varför det är viktigt, och berör förekomsten av tvivelaktiga forskningsmetoder och dess orsaker. Spoiler: även forskare är bara människor.
 
+## Code
+
+ * R simulation code: [simmons_et_al_2011.R](simmons_et_al_2011.R)
+
 ## Links
 
  * [Open Science Uppsala homepage](https://bit.ly/open_science_uppsala)
