@@ -3,6 +3,8 @@
 My talk for [Science Fika](https://www.sciencefika.se/) in Uppsala
 on 2023-01-29.
 
+ * Video: [YouTube](https://youtu.be/5_te17gHYnk)
+
 ## Summary used for Science Fika
 
 ### Open Science and scientists being humans
