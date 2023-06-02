@@ -3,6 +3,7 @@
 My talk for [Science Fika](https://www.sciencefika.se/) in Uppsala
 on 2023-01-29.
 
+ * Slides: [download (.odp)](science_fika_talk_20230129.odp)
  * Video: [download (.mkv)](https://richelbilderbeek.nl/science_fika_20230129.mkv) [YouTube](https://youtu.be/5_te17gHYnk)
 
 ## Summary used for Science Fika
