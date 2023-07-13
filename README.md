@@ -69,3 +69,4 @@ Open Science är ett sätt att göra vetenskap som är mer reproducerbar, effekt
  * [Wicherts et al., 2016] Wicherts, Jelte M., et al. "Degrees of freedom in planning, running, analyzing, and reporting psychological studies: A checklist to avoid p-hacking." Frontiers in psychology (2016): 1832.
 
  * [Wicherts, 2017] Wicherts, Jelte M. "The weak spots in contemporary science (and how to fix them)." Animals 7.12 (2017): 90.
+
