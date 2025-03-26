@@ -4,7 +4,7 @@ My talk for [Science Fika](https://www.sciencefika.se/) in Uppsala
 on 2023-01-29.
 
  * Slides: [download (.odp)](science_fika_talk_20230129.odp)
- * Video: [download (.mkv)](https://richelbilderbeek.nl/science_fika_20230129.mkv) [YouTube](https://youtu.be/5_te17gHYnk)
+ * Video: [YouTube](https://youtu.be/5_te17gHYnk)
 
 ## Summary used for Science Fika
 
@@ -56,7 +56,7 @@ Open Science är ett sätt att göra vetenskap som är mer reproducerbar, effekt
 
 ## Links
 
- * [Open Science Uppsala homepage](https://bit.ly/open_science_uppsala)
+ * [Open Science Uppsala homepage](https://bit.ly/osc_uppsala)
  * [A more academic presentation by me](https://github.com/richelbilderbeek/open_science_presentation_20211111)
  * [An Open Science Uppsala presentation by Gustav Nilsonne](https://t.co/CiPQb4OXfj)
 
